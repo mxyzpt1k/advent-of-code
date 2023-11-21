@@ -1,0 +1,60 @@
+;;; day9.el - advent of code 2015
+;;; Sunday, November 19, 2023
+;;; warming up for 2023
+
+(defun edge-distance (from to graph)
+  (let ((edge (assoc (cons from to) graph)))
+    (cdr edge)))
+
+(defun uniq (list)
+  (cond ((null list) ())
+	((member (car list) (cdr list)) (uniq (cdr list)))
+	(t (cons (car list) (uniq (cdr list))))))
+
+;; (uniq (list "foo" "bar" "baz" "foo" "bar"))
+   
+(defun path-length (path len graph)
+  (cond ((null (cdr path)) len)
+	;;((> len best) len)
+	(t (let ((from (car path))
+		 (to (cadr path)))
+	     (path-length (cdr path)
+			  (+ len (edge-distance from to graph))
+			  graph)))))
+	 
+(defun shortest-path (graph)
+  (let ((best 1000000)
+	(names (uniq (mapcar #'caar graph))))
+    (aoc-do-permutations (lambda (path)
+			   ;;(message (format "%s" path))
+			   (let ((len (path-length path 0 graph)))
+			     (when (< len best)
+			       (message (format "%d" best))
+			       (setq best len))))
+			 names)
+    best))
+
+(defun longest-path (graph)
+  (let ((best 0)
+	(names (uniq (mapcar #'caar graph))))
+    (aoc-do-permutations (lambda (path)
+			   ;;(message (format "%s" path))
+			   (let ((len (path-length path 0 graph)))
+			     (when (> len best)
+			       (message (format "%d" best))
+			       (setq best len))))
+			 names)
+    best))
+
+(aoc-copy-output ()
+  (let ((graph ()))
+    (dolist (line (aoc-buffer-lines "day9.input.txt"))
+      (cl-assert (string-match "\\(\\w+\\) to \\(\\w+\\) = \\([[:digit:]]+\\)" line))
+      (cl-destructuring-bind (a b d) (aoc-match-groups 3 line)
+	(setq graph (cons (cons (cons a b) (string-to-number d)) graph))
+	(setq graph (cons (cons (cons b a) (string-to-number d)) graph))))
+    (longest-path graph)
+    ;;(path-length (list "AlphaCentauri" "Straylight" "Snowdin") 0 graph)
+    )
+  )
+
