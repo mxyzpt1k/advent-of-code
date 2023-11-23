@@ -57,10 +57,11 @@
 (defun aoc-sum (list)
   (seq-reduce #'+ list 0))
 
-(defun aoc-uniq (list)
-  (cond ((null list) ())
-	((member (car list) (cdr list)) (aoc-uniq (cdr list)))
-	(t (cons (car list) (aoc-uniq (cdr list))))))
+;; use #'seq-uniq 
+;; (defun aoc-uniq (list)
+;;   (cond ((null list) ())
+;; 	((member (car list) (cdr list)) (aoc-uniq (cdr list)))
+;; 	(t (cons (car list) (aoc-uniq (cdr list))))))
 
 (cl-defstruct aoc-grid x y grid x-size y-size)
 
