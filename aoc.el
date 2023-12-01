@@ -22,9 +22,8 @@
 (defun aoc-match-groups (n line)
   "return all match groups as strings"
   (let ((acc ()))
-    (dotimes (k n acc)
-      (push (match-string (1+ k) line) acc))
-    (reverse acc)))
+    (dotimes (k n (reverse acc))
+      (push (match-string (1+ k) line) acc))))
 
 (defun aoc-do-permutations (fun list &optional acc)
   (if (null list)
