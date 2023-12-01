@@ -1,10 +1,11 @@
-;;; day1.el - advent of code 2023
+;;; Day 1: Trebuchet?!
+;;; Advent of Code 2023
 ;;; Friday, December 01, 2023
-
-;;; took a while to find a missing a pipe in the regexp
 
 ;;; Day       Time  Rank  Score       Time  Rank  Score
 ;;;   1   00:11:52  5738      0   00:44:31  5100      0
+
+;;; It took a while to find a missing a pipe in the regexp in part 2.
 
 ;;; part 1
 
