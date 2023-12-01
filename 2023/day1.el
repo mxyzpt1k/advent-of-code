@@ -1,7 +1,13 @@
 ;;; day1.el - advent of code 2023
 ;;; Friday, December 01, 2023
 
+;;; took a while to find a missing a pipe in the regexp
+
+;;; Day       Time  Rank  Score       Time  Rank  Score
+;;;   1   00:11:52  5738      0   00:44:31  5100      0
+
 ;;; part 1
+
 (aoc-copy-output ()
   (let ((sum 0))
     (dolist (line (aoc-buffer-lines "day1.2023.input.txt") sum)
