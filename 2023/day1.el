@@ -2,6 +2,7 @@
 ;;; Advent of Code 2023
 ;;; Friday, December 01, 2023
 
+;;       -------Part 1--------   -------Part 2--------
 ;;; Day       Time  Rank  Score       Time  Rank  Score
 ;;;   1   00:11:52  5738      0   00:44:31  5100      0
 

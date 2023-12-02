@@ -6,6 +6,11 @@ I may make a run for the leaderboard.
 
 The initial library (aoc.el) was developed while solving the puzzles from 2015.
 
+## Day 2: Cube Conundrum
+
+Aarrrg. Read the instructions thoroughly. I counted valid games in part 1 instead
+of adding their IDs--and it's even in bold!
+
 ## Day 1: Trebuchet?!
 
 A missing pipe in the regular expression slowed me down in part 2.
