@@ -56,8 +56,7 @@
   (let ((solution 0))
     (dolist (line (aoc-buffer-lines input-buffer) solution)
       (let ((game (string-split line "[:;]")))
-	(cl-destructuring-bind (r g b) (day2-fewest (cdr game))
-	  (cl-incf solution (* r g b)))))))
+	(cl-incf solution (apply #'* (day2-fewest (cdr game))))))))
 
 ;; (aoc-copy-output () (day2-part2 "day2.2023.input.txt"))
 ;; (aoc-copy-output () (day2-part2 "test.buff"))
