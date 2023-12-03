@@ -65,12 +65,17 @@
 (cl-defstruct aoc-grid x y grid x-size y-size)
 
 (cl-defmethod aoc-grid-set ((grid aoc-grid) x y v)
-  (let ((row (aref (aoc-grid-grid grid) y)))
-    (setf (aref row x) v)))
+  (when (and (< -1 x (aoc-grid-x-size grid))
+	     (< -1 y (aoc-grid-y-size grid)))
+    (let ((row (aref (aoc-grid-grid grid) y)))
+      (setf (aref row x) v))))
 
-(cl-defmethod aoc-grid-get ((grid aoc-grid) x y)
-  (let ((row (aref (aoc-grid-grid grid) y)))
-    (aref row x)))
+(cl-defmethod aoc-grid-get ((grid aoc-grid) x y &optional v)
+  (if (and (< -1 x (aoc-grid-x-size grid))
+	     (< -1 y (aoc-grid-y-size grid)))
+      (let ((row (aref (aoc-grid-grid grid) y)))
+	(aref row x))
+    v))
 
 (cl-defmethod aoc-grid-get-default ((grid aoc-grid) x y default)
   "get (x y) from grid, if x or y is out of bounds, return default"

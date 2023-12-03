@@ -2,9 +2,12 @@
 ;;; Advent of Code 2023
 ;;; Saturday, December 02, 2023
 
-;;       -------Part 1--------   -------Part 2--------
-;; Day       Time  Rank  Score       Time  Rank  Score
-;;   2   00:38:17  8527      0   00:48:41  8508      0
+;;; Spent too much time looking for a code bug when the problem was
+;;; reading comprehension.
+
+;;;       -------Part 1--------   -------Part 2--------
+;;; Day       Time  Rank  Score       Time  Rank  Score
+;;;   2   00:38:17  8527      0   00:48:41  8508      0
 
 ;;; part 1
 
@@ -47,10 +50,9 @@
   (let ((red 0)
 	(blue 0)
 	(green 0))
-    (dolist (one-pull cubes)
-      (cl-destructuring-bind (r g b) (day2-to-rgb one-pull)
-	(setf red (max red r) blue (max blue b) green (max green g))))
-    (list red green blue)))
+    (dolist (round cubes (list red green blue))
+      (cl-destructuring-bind (r g b) (day2-to-rgb round)
+	(setf red (max red r) blue (max blue b) green (max green g))))))
 
 (defun day2-part2 (input-buffer)
   (let ((solution 0))
