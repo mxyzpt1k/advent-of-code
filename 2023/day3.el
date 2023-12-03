@@ -32,9 +32,9 @@
 
 (defun day3-get-gears (grid x y)
   (when (char-equal ?* (aoc-grid-get grid x y ?.))
-    (message (format "gear at (%d %d)" x y))
+    ;;(message (format "gear at (%d %d)" x y))
     (let ((*parts* ()))
-      ;;(grid (aoc-copy-grid g)))
+      ;; (grid (aoc-grid-copy grid)))
       (day3-neighbors grid x y)
       (let ((nums (cl-remove-if #'null (day3-extract-numbers *parts*))))
 	(when (= 2 (length nums))

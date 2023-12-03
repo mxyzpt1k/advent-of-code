@@ -10,15 +10,6 @@
        (kill-new ,var)
        ,var)))
 
-(defmacro aoc-code-block (body)
-  ;; xxx - unused
-  (declare (indent defun))
-  `(aoc-copy-ooutput 'aoc-return ,body))
-
-(defun aoc-return (v)
-  ;; xxx -unused
-  (throw 'aoc-return v))
-
 (defun aoc-match-groups (n line)
   "return all match groups as strings"
   (let ((acc ()))
@@ -93,6 +84,13 @@
   (cl-loop for y from (cadr start) upto (cadr end)
 	   do (cl-loop for x from (car start)  upto (car end)
 		       do (funcall fun grid x y))))
+
+(cl-defmethod aoc-grid-copy ((grid aoc-grid))
+  (let ((rows (make-vector (aoc-grid-y-size grid) nil)))
+    (seq-map-indexed (lambda (elt idx)
+		       (setf (aref rows idx) (seq-copy elt)))
+		     (aoc-grid-grid grid))
+    (make-aoc-grid :grid rows :y-size (length rows) :x-size (length (aref rows 0)))))
 
 (defun aoc-make-grid (rows cols)
   (let ((grid (make-vector rows nil)))
