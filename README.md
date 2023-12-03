@@ -6,6 +6,13 @@ I may make a run for the leaderboard.
 
 The initial library (aoc.el) was developed while solving the puzzles from 2015.
 
+## Day 3: Gear Ratios
+
+The grid class from the 2015 warm up exercises came in handy today;
+although, it needed a copy method.
+Also took advantage of dynamic scoping. (So dirty.)
+Still slow for all that.
+
 ## Day 2: Cube Conundrum
 
 Aarrrg. Read the instructions thoroughly. I counted valid games in part 1 instead
