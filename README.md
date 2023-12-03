@@ -20,7 +20,7 @@ of adding their IDs--and it's even in bold!
 
 Parsing this sort of structured input happens a lot, so after the initial
 submission, I went looking for a better method and found
-[Parsing Expression Grammars in Emacs Lisp|https://elpa.gnu.org/packages/peg.html]
+[Parsing Expression Grammars in Emacs Lisp](https://elpa.gnu.org/packages/peg.html)
 or PEG. 
 
 ## Day 1: Trebuchet?!
