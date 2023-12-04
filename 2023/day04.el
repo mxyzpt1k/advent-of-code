@@ -6,10 +6,10 @@
 ;;; Day       Time   Rank  Score       Time   Rank  Score
 ;;;   4   00:22:50   8350      0   01:21:03  11423      0
 
-(require 'peg)
+(require 'peg)		       ; https://elpa.gnu.org/packages/peg.html
 
 (defun day4-parse-card ()
-  "parse the card input at point"
+  "parse the card at point"
   (with-peg-rules
       ((card (bol) "Card" number ":" (list (+ number)) " |" (list (+ number)) (eol)
 	     `(a b -- (list a b)))
