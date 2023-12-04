@@ -7,6 +7,12 @@ I may make a run for the leaderboard.
 The initial library (aoc.el) was developed while warming up with the
 puzzles from 2015.
 
+## Day 4: Scratchcards
+
+Reading scratch off cards and counting the winners.
+This was another opportunity to use the
+[PEG](https://elpa.gnu.org/packages/peg.html) library.
+The set operations in the Common Lisp library also came in handy.
 
 ## Day 3: Gear Ratios
 
