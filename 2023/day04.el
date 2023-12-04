@@ -36,10 +36,10 @@
 ;; (aoc-copy-output () (day4-part-1 "day4.2023.input.txt"))
 
 (defun day4-part-2 (buffer-name)
-  ;; read the cards into a list, then processing them in order
+  ;; read the cards into a list, then just process them in order
   (with-current-buffer buffer-name
     (beginning-of-buffer)
-    (let ((card `(0 ((0) (1)))) 	;start with a fake Card 0
+    (let ((card `(0 ((0) (1)))) 	;a fake Card 0 simplifies processing
 	  (cards ()))
       (while card
 	(push card cards)
