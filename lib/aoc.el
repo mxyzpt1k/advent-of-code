@@ -97,4 +97,3 @@
     (dotimes (i cols)
       (setf (aref grid i) (make-vector cols 0)))
     (make-aoc-grid :x 0 :y 0 :grid grid :x-size cols :y-size rows)))
-
