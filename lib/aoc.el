@@ -5,8 +5,8 @@
   (declare (indent defun))
   (let ((var (gensym)))
     `(let ((,var (catch ,tag ,body)))
-       (if (numberp ,var)
-	   (setq ,var (number-to-string ,var)))
+       (when (numberp ,var)
+	 (setq ,var (number-to-string ,var)))
        (kill-new ,var)
        ,var)))
 
