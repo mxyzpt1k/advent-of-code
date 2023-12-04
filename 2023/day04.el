@@ -6,6 +6,7 @@
 ;;; Day       Time   Rank  Score       Time   Rank  Score
 ;;;   4   00:22:50   8350      0   01:21:03  11423      0
 
+(require 'cl-lib)
 (require 'peg)		       ; https://elpa.gnu.org/packages/peg.html
 
 (defun day4-parse-card ()
@@ -49,7 +50,7 @@
 
 (defun day4-count-copies (cards)
   (let ((copies (make-vector (length cards) 1)))
-    (setf (aref copies 0) 0)		;the fake Card 0
+    (setf (aref copies 0) 0)		;don't count fake Card 0
     (seq-map-indexed (lambda (elt idx)
 		       (cl-destructuring-bind (id (winners numbers)) elt
 			 (let ((m (aref copies idx))
@@ -61,3 +62,25 @@
 
 ;; (aoc-copy-output () (day4-part-2 "day4.2023.input.txt"))
 ;; (aoc-copy-output () (day4-part-2 "test.buff"))
+
+(defun day4-part-2-after-the-fact (buffer-name)
+  ;; just playing around the next day.
+  ;; find the answer in a single pass through the input buffer.
+  (with-current-buffer buffer-name
+    (beginning-of-buffer)
+    (cl-do ((card #1=(day4-parse-card) #1#)
+	    (copies (make-hash-table :test #'equal)))
+	((null card) (seq-reduce #'+ (hash-table-values copies) 0))
+      (forward-line)
+      (cl-destructuring-bind (id (winners numbers)) card
+	(let ((m (gethash id copies 0))
+	      (n (length (cl-intersection winners numbers))))
+	  (when (zerop m)
+	    (setf (gethash id copies) 1 m 1))
+	  (dotimes (k n)
+	    (cl-incf (gethash (+ id k 1) copies 1) m)))))))
+
+;; (benchmark-run (day4-part-2-after-the-fact "day4.2023.input.txt"))
+;;  0.343 seconds on an M1 Mac Mini
+
+;; (day4-part-2-after-the-fact "test.buff")

@@ -70,11 +70,8 @@
 
 (cl-defmethod aoc-grid-get-default ((grid aoc-grid) x y default)
   "get (x y) from grid, if x or y is out of bounds, return default"
-  (cond ((< x 0) default)
-	((< y 0) default)
-	((not (< x (aoc-grid-x-size grid))) default)
-	((not (< y (aoc-grid-y-size grid))) default)
-	(t (aoc-grid-get grid x y))))
+  ;; keeping this in case something in 2015 uses it
+  (aoc-grid-get grid x y default))
 
 (cl-defmethod aoc-walk-grid ((grid aoc-grid) fun &optional start end)
   (unless start
