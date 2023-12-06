@@ -10,9 +10,9 @@ puzzles from 2015.
 ## Day 5: If You Give A Seed A Fertilizer
 
 Part 1 wasn't too bad, but figuring out how to slice ranges in part 2
-was taking too long. Eventually I decided fell back to modified brute
-force. Emacs Lisp just wasn't fast enough to try every possible input,
-so I skipped through the input data then backtracked to a solution.
+was taking too long. Eventually I decided on a modified brute force
+solution. Emacs Lisp just wasn't fast enough to try every possible
+input, so I skipped through the input data then backtracked the answer.
 
 ## Day 4: Scratchcards
 
