@@ -24,7 +24,11 @@
 ;; (benchmark-run (aoc-copy-output () (day6-part-2)))
 ;;  => 84 seconds
 
-(defun day6-count-wins-afterwards (time record)
+
+;;; the functions below are optimizations that were written after
+;;; submitting the answer to part 2
+
+(defun day6-count-wins-optimize (time record)
   ;; turns out we're done when we find the first win because the
   ;; solutions are symmetrical
   ;;   d = v(t - v)
@@ -34,10 +38,10 @@
 	(when (> (* speed time-left) record)
 	  (throw 'wins (1+ (- time-left speed))))))))
 
-;; (benchmark-run (aoc-copy-output () (day6-count-wins-afterwards 50748685 242101716911252)))
+;; (benchmark-run (day6-count-wins-afterwards 50748685 242101716911252) )
 ;;  => 9 seconds
 
-(defun day6-count-wins-afterwards2 (time record)
+(defun day6-count-wins-optimize2 (time record)
   ;; Even faster, we can use the quadratic formula since
   ;;   d = v(t - v) = tv - v^2
   ;;   v^2 - tv + d = 0

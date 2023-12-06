@@ -11,6 +11,9 @@ puzzles from 2015.
 
 Wow. What a difference. This one was simple compared to previous days.
 
+Although I got a correct answer to part 2, it took 84 seconds to find.
+You can cut that to practically nothing with a little high school algebra.
+
 ## Day 5: If You Give A Seed A Fertilizer
 
 Part 1 wasn't too bad, but figuring out how to slice ranges in part 2
