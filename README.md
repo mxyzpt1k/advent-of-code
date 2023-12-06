@@ -7,6 +7,10 @@ I may make a run for the leaderboard.
 The initial library (aoc.el) was developed while warming up with the
 puzzles from 2015.
 
+## Day 6: Wait For It
+
+Wow. What a difference. This one was simple compared to previous days.
+
 ## Day 5: If You Give A Seed A Fertilizer
 
 Part 1 wasn't too bad, but figuring out how to slice ranges in part 2
