@@ -6,7 +6,7 @@
 ;; Day       Time   Rank  Score       Time   Rank  Score
 ;;   5   00:44:04   5483      0   22:10:50  40131      0
 
-;; part 2 solution is an ugly hack. oh well.
+;; hacky part 2 solution takes 82 seconds to run
 
 (require 'cl-lib)
 
@@ -51,7 +51,7 @@
     (let ((min (+ 4294438171 529125))
 	  (count 0)
 	  (start nil))
-      ;; find a low number without trying everything
+      ;; find a low number without trying every seed
       (mapc (lambda (pair)
 	      ;;(message (format "pair: %d, min: %d" (cl-incf count) min))
 	      (cl-do ((seed (car pair) (+ 32211 seed)))
@@ -74,7 +74,7 @@
       min)))
 
 ;; 78775051 -- woot!
-;; 78972903 -- to high
+;; 78972903 -- too high
 
 ;; (benchmark-run (aoc-copy-output () (day5-part-2 "day5.2023.input.txt")))
 ;; (day5-part-2 "test.buff")
