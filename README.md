@@ -7,6 +7,13 @@ I may make a run for the leaderboard.
 The initial library (aoc.el) was developed while warming up with the
 puzzles from 2015.
 
+## Day 5: If You Give A Seed A Fertilizer
+
+Part 1 wasn't too bad, but figuring out how to slice ranges in part 2
+was taking too long. Eventually I decided fell back to modified brute
+force. Emacs Lisp just wasn't fast enough to try every possible input,
+so I skipped through the input data then backtracked to a solution.
+
 ## Day 4: Scratchcards
 
 Reading scratch off cards and counting the winners.
