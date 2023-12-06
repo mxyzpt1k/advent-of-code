@@ -11,15 +11,16 @@
 	(dists `(242   1017   1691   1252)))
     (seq-reduce #'* (cl-mapcar #'day6-count-wins times dists) 1)))
 
-(defun day6-part-2 (buffer-name)
+(defun day6-part-2 ()
   (day6-count-wins 50748685 242101716911252))
 
-(defun day6-count-wins ()
+(defun day6-count-wins (time record)
   (let ((wins 0))
     (dotimes (speed time wins)
       (when (> (* speed (- time speed)) record)
 	(setf wins (1+ wins))))))
 
 ;; (aoc-copy-output () (day6-part-1))
-;; (aoc-copy-output () (day6-part-2))
+;; (benchmark-run (aoc-copy-output () (day6-part-2)))
+;;  => 84 seconds
 
