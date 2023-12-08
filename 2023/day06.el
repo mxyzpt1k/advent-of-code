@@ -30,8 +30,8 @@
 
 (defun day6-count-wins-optimize (time record)
   ;; turns out we're done when we find the first win because the
-  ;; solutions are symmetrical
-  ;;   d = v(t - v)
+  ;; solutions are symmetric
+  ;;   d = v(t - v) => a parabola
   (catch 'wins
     (dotimes (speed time)
       (let ((time-left (- time speed)))
@@ -42,10 +42,10 @@
 ;;  => 9 seconds
 
 (defun day6-count-wins-optimize2 (time record)
-  ;; Even faster, we can use the quadratic formula since
+  ;; even faster, we can use the quadratic formula since
   ;;   d = v(t - v) = tv - v^2
   ;;   v^2 - tv + d = 0
-  ;; the two roots should be both close to the solution
+  ;; the two roots should both be close to the solution
   (let ((a 1)
 	(b time)
 	(c record))

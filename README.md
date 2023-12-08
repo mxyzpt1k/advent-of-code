@@ -7,6 +7,16 @@ I may make a run for the leaderboard.
 The initial library (aoc.el) was developed while warming up with the
 puzzles from 2015.
 
+## Day 8: Haunted Wasteland
+
+A little math helped solve part 2.
+
+## Day 7: Camel Cards
+
+Sorting card hands for an elvish (elfish?) game.
+Had to knock off early to get some sleep for an early meeting.
+Although, slowing down might have helped me finish faster.
+
 ## Day 6: Wait For It
 
 Wow. What a difference. This one was simple compared to previous days.
