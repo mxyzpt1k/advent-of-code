@@ -11,6 +11,10 @@ puzzles from 2015.
 
 A little math helped solve part 2.
 
+One unusual thing that hung me up briefly, I had to update the parser
+to test part 2 because the test locations for that half included
+digits when the other inputs only had uppercase letters.
+
 ## Day 7: Camel Cards
 
 Sorting card hands for an elvish (elfish?) game.
