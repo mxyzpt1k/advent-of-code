@@ -10,10 +10,11 @@
 
 (defun day8-read-rule ()
   (with-peg-rules
-      ((rule (bol) (substring word) " = (" (substring word) ", " (substring word) ")")
+      ((rule (bol) (substring word) " = (" (substring word) ", " (substring word) ")"
+	     `(a b c -- c b a))
        (word (+ char))
        (char (or (range ?0 ?9) (range ?A ?Z))))
-    (reverse (peg-run (peg rule)))))
+    (peg-run (peg rule))))
 
 (defun day8-part-1 (buffer-name)
   (with-current-buffer buffer-name
@@ -71,4 +72,5 @@
 	      L/R))))
 
 ;; (aoc-copy-output 'done (day8-part-2 "test.buff"))
-;; (aoc-copy-output 'done (day8-part-2 "day8.2023.input.txt"))
+;; (benchmark-run (aoc-copy-output 'done (day8-part-2 "day8.2023.input.txt")))
+;;  => 0.385 seconds
