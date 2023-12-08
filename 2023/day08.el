@@ -21,8 +21,7 @@
     (beginning-of-buffer)
     (let ((L/R (string-trim (thing-at-point 'line t)))
 	  (rules (make-hash-table :test 'equal)))
-      (forward-line)
-      (forward-line)
+      (forward-line 2)
       (cl-do ((rule #1=(day8-read-rule) #1#))
 	  ((null rule) t)
 	(setf (gethash (car rule) rules) (cdr rule))
@@ -46,8 +45,7 @@
     (beginning-of-buffer)
     (let ((L/R (string-trim (thing-at-point 'line t)))
 	  (rules (make-hash-table :test 'equal)))
-      (forward-line)
-      (forward-line)
+      (forward-line 2)
       (cl-do ((rule #1=(day8-read-rule) #1#))
 	  ((null rule) t)
 	(setf (gethash (car rule) rules) (cdr rule))
@@ -73,4 +71,4 @@
 
 ;; (aoc-copy-output 'done (day8-part-2 "test.buff"))
 ;; (benchmark-run (aoc-copy-output 'done (day8-part-2 "day8.2023.input.txt")))
-;;  => 0.385 seconds
+;;  => 0.395 seconds
