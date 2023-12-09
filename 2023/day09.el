@@ -32,8 +32,10 @@
 
 ;; (aoc-copy-output () (day9 "day9.2023.input.txt"))
 
-;; thinking about the solution afterwards, you don't need the solve
-;; function if you return numbers instead of lists, such as.
+
+;; thinking about the solution afterwards, you don't need the SOLVE
+;; function if EXTRAPOLATE returns numbers instead of lists.  tough to
+;; be so clean when you're trying to solve the problem quickly.
 (defun extrapolate (nums)
   (if (cl-every 'zerop nums)
       0
