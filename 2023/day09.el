@@ -31,3 +31,10 @@
 	(t (cons (- (car nums) (cadr nums)) (next-level (cdr nums))))))
 
 ;; (aoc-copy-output () (day9 "day9.2023.input.txt"))
+
+;; thinking about the solution afterwards, you don't need the solve
+;; function if you return numbers instead of lists, such as.
+(defun extrapolate (nums)
+  (if (cl-every 'zerop nums)
+      0
+    (+ (car nums) (extrapolate (next-level nums)))))
