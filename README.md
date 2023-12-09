@@ -9,7 +9,7 @@ puzzles from 2015.
 
 ## Day 9: Mirage Maintenance
 
-A couple of recursive functions later it was best day so far.
+A couple of recursive functions and it was my best day so far.
 
 ## Day 8: Haunted Wasteland
 
