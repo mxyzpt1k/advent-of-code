@@ -11,20 +11,19 @@
     (dolist (line (aoc-buffer-lines buffer-name) solution)
       (let ((nums (mapcar 'string-to-number (string-split line))))
 	;; part 1
-	;;(cl-incf solution (extrapolate (reverse nums)))
+	(cl-incf solution (extrapolate (reverse nums)))
 	;; part 2
-	(cl-incf solution (extrapolate nums))
-	))))
+	(cl-incf solution (extrapolate nums))))))
 
 (defun extrapolate (nums &optional acc)
   (if (cl-every 'zerop nums)
-      (solve 0 nums acc)
+      (solve 0 acc)
     (extrapolate (next-level nums) (cons nums acc))))
 
-(defun solve (n nums acc)
-  (if (null acc)
+(defun solve (n nums)
+  (if (null nums)
       n
-    (solve (+ n (caar acc)) (car acc) (cdr acc))))
+    (solve (+ n (caar nums)) (cdr nums))))
 
 (defun next-level (nums)
   (cond ((null nums) ())
