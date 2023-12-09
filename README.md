@@ -7,6 +7,10 @@ I may make a run for the leaderboard.
 The initial library (aoc.el) was developed while warming up with the
 puzzles from 2015.
 
+## Day 9: Mirage Maintenance
+
+A couple of recursive functions later it was best day so far.
+
 ## Day 8: Haunted Wasteland
 
 A little math helped solve part 2.

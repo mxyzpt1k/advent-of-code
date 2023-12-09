@@ -40,6 +40,8 @@
 			(throw 'done count))))
 		  L/R))))))
 
+;; (aoc-copy-output 'done (day8-part-1 "day8.2023.input.txt"))
+
 (defun day8-part-2 (buffer-name)
   (with-current-buffer buffer-name
     (beginning-of-buffer)
@@ -69,6 +71,5 @@
 		    (throw 'done count))))
 	      L/R))))
 
-;; (aoc-copy-output 'done (day8-part-2 "test.buff"))
 ;; (benchmark-run (aoc-copy-output 'done (day8-part-2 "day8.2023.input.txt")))
-;;  => 0.395 seconds
+;;  => 0.405 seconds
