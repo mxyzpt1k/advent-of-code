@@ -1,11 +1,14 @@
 # Advent of Code 2023
 
-A repository of emacs lisp solutions for the 2023 Advent of Code.
-Although, if I see a quick solution using a Perl one-liner,
-I may make a run for the leaderboard.
-
+A repository of emacs lisp solutions for the
+[2023 Advent of Code](https://adventofcode.com/2023).
 The initial library (aoc.el) was developed while warming up with the
-puzzles from 2015.
+[puzzles from 2015](https://adventofcode.com/2015).
+
+The plan is to use [elisp](https://www.gnu.org/software/emacs/manual/elisp.html)
+for the whole contest, but if I see a quick
+solution using sed or awk, I may make a run for the leaderboard.
+
 
 ## Day 9: Mirage Maintenance
 
