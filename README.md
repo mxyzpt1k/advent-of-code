@@ -9,6 +9,14 @@ The plan is to use [elisp](https://www.gnu.org/software/emacs/manual/elisp.html)
 for the whole contest, but if I see a quick
 solution using sed or awk, I may make a run for the leaderboard.
 
+## Day 11: Cosmic Expansion
+
+Quick part 1, but I rotated the universe the wrong way the first time
+through part 2. That took a while to find.
+
+## Day 10: Pipe Maze
+
+Still working on part 2.
 
 ## Day 9: Mirage Maintenance
 

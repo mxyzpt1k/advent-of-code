@@ -89,8 +89,9 @@
 		     (aoc-grid-grid grid))
     (make-aoc-grid :grid rows :y-size (length rows) :x-size (length (aref rows 0)))))
 
-(defun aoc-make-grid (rows cols)
+(defun aoc-make-grid (rows cols &optional elt)
   (let ((grid (make-vector rows nil)))
-    (dotimes (i cols)
-      (setf (aref grid i) (make-vector cols 0)))
+    (dotimes (i rows)
+      (aset grid i (make-vector cols elt)))
     (make-aoc-grid :x 0 :y 0 :grid grid :x-size cols :y-size rows)))
+
