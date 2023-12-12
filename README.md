@@ -9,6 +9,11 @@ The plan is to use [elisp](https://www.gnu.org/software/emacs/manual/elisp.html)
 for the whole contest, but if I see a quick
 solution using sed or awk, I may make a run for the leaderboard.
 
+## Day 12: Hot Springs
+
+Part 1 complete and committed, but it was slow. The expansion in part 2
+will need a different solution.
+
 ## Day 11: Cosmic Expansion
 
 Quick part 1, but I rotated the universe the wrong way the first time
