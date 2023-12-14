@@ -2,13 +2,13 @@
 # Advent of Code 2023
 # Wednesday, December 13, 2023
 
+#       --------Part 1--------   --------Part 2--------
+# Day       Time   Rank  Score       Time   Rank  Score
+# 13   22:41:51  27921      0          -      -      -
+
 # got stuck in elisp, trying something different
 
-$goes_to_edge = false
-
-def Max(a,b)
-  if a > b then a else b end
-end
+$goes_to_edge = false           # this is what it took a while to get
 
 def column_equal(m, a, b)
   m.each do |row|
@@ -73,6 +73,7 @@ def find_mirrors(m)
   vs + hs*100
 end
 
+# main
 $/ = ''
 score = 0
 $stdin.each do |thing|

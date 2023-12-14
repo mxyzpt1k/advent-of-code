@@ -9,6 +9,17 @@ The plan is to use [elisp](https://www.gnu.org/software/emacs/manual/elisp.html)
 for the whole contest, but if I see a quick
 solution using sed or awk, I may make a run for the leaderboard.
 
+## Day 14: Parabolic Reflector Dish
+
+An inefficient solution, but I went to bed and solved it in the morning
+using output collect in a buffer. There was enough data collected after the
+first hour, but I needed the sleep anyway.
+
+## Day 13: Point of Incidence
+
+Used Ruby to help get unstuck interpreting the problem description.
+Only part 1 so far.
+
 ## Day 12: Hot Springs
 
 Part 1 complete and committed, but it was slow. The expansion in part 2
