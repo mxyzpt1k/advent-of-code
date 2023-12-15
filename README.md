@@ -9,6 +9,10 @@ The plan is to use [elisp](https://www.gnu.org/software/emacs/manual/elisp.html)
 for the whole contest, but if I see a quick
 solution using sed or awk, I may make a run for the leaderboard.
 
+## Day 15: Lens Library
+
+Implemening a hash table. Pretty easy compared to the last couple of days.
+
 ## Day 14: Parabolic Reflector Dish
 
 An inefficient solution, but I went to bed and solved it in the morning

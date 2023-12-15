@@ -6,9 +6,9 @@
 ;;; Day       Time   Rank  Score       Time   Rank  Score
 ;;;  14   00:53:10   6480      0   09:32:18  14102      0
 
-;;; inefficient, but I went to bed and solved it in the morning
-;;; using the output buffer. there was enough data at around the
-;;; first hour, but I needed the sleep anyway.
+;;; Inefficient, but I went to bed and solved it in the morning
+;;; using the output buffer. There turned out to be enough data
+;;; afer the first hour. I needed the sleep anyway.
 
 ;;; ((1B - start-of-cycle) mod size-of-cycle) = cycle-offset
 

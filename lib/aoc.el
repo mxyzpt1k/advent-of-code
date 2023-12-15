@@ -10,6 +10,21 @@
        (kill-new ,var)
        ,var)))
 
+(defun aoc-add-border ()
+  "add a character to each end of every line and the beginning and end of the buffer"
+  (interactive)
+  (let ((border-char (read-from-minibuffer "border char? ")))
+    (save-excursion
+      (beginning-of-buffer)
+      (replace-regexp "^" border-char)
+      (beginning-of-buffer)
+      (replace-regexp "$" border-char)
+      (beginning-of-buffer)
+      (let ((len (1- (line-end-position))))
+	(insert (make-string len (aref border-char 0)) "\n")
+	(end-of-buffer)
+	(insert "\n" (make-string len (aref border-char 0)) "\n")))))
+
 (defun aoc-match-groups (n line)
   "return all match groups as strings"
   (let ((acc ()))
