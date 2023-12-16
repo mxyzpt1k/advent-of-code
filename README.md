@@ -9,6 +9,11 @@ The plan is to use [elisp](https://www.gnu.org/software/emacs/manual/elisp.html)
 for the whole contest, but if I see a quick
 solution using sed or awk, I may make a run for the leaderboard.
 
+## Day 16: The Floor Will Be Lava
+
+I spent a lot of time hunting down errors in my SETFs.
+Maybe I'll try to rely on it less.
+
 ## Day 15: Lens Library
 
 Implemening a hash table. Pretty easy compared to the last couple of days.
