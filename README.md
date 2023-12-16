@@ -11,8 +11,16 @@ solution using sed or awk, I may make a run for the leaderboard.
 
 ## Day 16: The Floor Will Be Lava
 
-I spent a lot of time hunting down errors in my SETFs.
-Maybe I'll try to rely on it less.
+Tracing beams of light through a hall of mirrors.
+It's about time to refactor all the 2D functions from the last couple of days
+into aoc.el.
+
+I spent a lot of time hunting down an issues caused by a bad INCF statement
+to move west
+
+    (cl-incf (beam-col beam)) -1)
+
+It's valid syntax, but not what I meant. I'll have to switch to DECF.
 
 ## Day 15: Lens Library
 

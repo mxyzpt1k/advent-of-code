@@ -73,6 +73,7 @@
       (t (cl-assert "unexpected direction")))))
   
 (defun day16-make-grid (buffer-name)
+  ;; watch out for a little code from day10
   (let ((lines (mapcar (lambda (line) (seq-into line 'vector))
 		       (aoc-buffer-lines buffer-name))))
     (let ((grid (day10-add-border (seq-into lines 'vector))))
@@ -142,6 +143,7 @@
 ;; (day16-part-1 "test.buff")
 ;; (aoc-copy-output () (day16-part-1 "day16.2023.input.txt"))
 
+
 ;;; part 2
 
 (defun day16-reset (grid)
@@ -153,6 +155,7 @@
 	   grid))
 
 (defun day16-trial (grid first-beam)
+  ;; this is the part 1 solution with a variable starting point
   (day16-reset grid)
   (let ((beams (list first-beam)))
     (while beams
@@ -171,7 +174,7 @@
     (let ((rows (length grid))
 	  (cols (length (aref grid 0)))
 	  (best 0))
-      (dotimes (r (- rows 2))		;grid has a border
+      (dotimes (r (- rows 2))		;-2 because the grid has a border
 	(setq best (max best (day16-trial grid (make-beam :direction 'east :row (1+ r) :col 1 :active t))))
 	(setq best (max best (day16-trial grid (make-beam :direction 'west :row (1+ r) :col (1- cols) :active t)))))
       (dotimes (c (- cols 2))
