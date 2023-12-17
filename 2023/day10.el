@@ -2,6 +2,10 @@
 ;;; Advent of Code 2023
 ;;; Sunday, December 10, 2023
 
+;;;       --------Part 1--------   --------Part 2--------
+;;; Day       Time   Rank  Score       Time   Rank  Score
+;;;  10   15:43:57  36291      0       >24h  41477      0
+
 (defun day10-move (direction)
   (cl-case direction
     (east (forward-char))
@@ -188,7 +192,7 @@
   (beginning-of-buffer)
   (let ((pos (1- (search-forward "S"))))
     (goto-char pos)
-    (day10-move 'north)			;it' a 7
+    (day10-move 'north)			;shortcut, I konw there's a 7 to the north
     (day10-follow-path pos)))
 
 (defun day10-convert-to-yx (pos)

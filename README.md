@@ -48,7 +48,9 @@ through part 2. That took a while to find.
 
 ## Day 10: Pipe Maze
 
-Still working on part 2.
+It took me quite a while to figure out part 2. I ended up expanding the
+map into 3x3 tiles to make it easier to use a flood fill to figure out
+what was inside and what was outside the path.
 
 ## Day 9: Mirage Maintenance
 
