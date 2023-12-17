@@ -10,7 +10,7 @@
        (kill-new ,var)
        ,var)))
 
-(defun aoc-add-border ()
+(defun aoc-add-border-command ()
   "add a character to each end of every line and the beginning and end of the buffer"
   (interactive)
   (let ((border-char (read-from-minibuffer "border char? ")))
@@ -24,6 +24,18 @@
 	(insert (make-string len (aref border-char 0)) "\n")
 	(end-of-buffer)
 	(insert "\n" (make-string len (aref border-char 0)) "\n")))))
+
+(defun aoc-add-border (grid &optional char)
+  (unless char
+    (setq char ?#))
+  (let ((cols (length (aref grid 0)))
+	(rows (length grid)))
+    (let ((new (make-vector (+ 2 rows) ())))
+      (setf (aref new 0) (make-vector (+ 2 cols) ?#))
+      (setf (aref new (1+ rows)) (make-vector (+ 2 cols) ?#))
+      (dotimes (r rows)
+	(setf (aref new (1+ r)) (vconcat [?#] (aref grid r) [?#])))
+      new)))
 
 (defun aoc-match-groups (n line)
   "return all match groups as strings"
