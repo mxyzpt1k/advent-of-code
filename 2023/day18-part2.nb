@@ -1,0 +1,10 @@
+(* Day 18: Lavaduct Lagoon   *)
+(* Advent of Code 2023       *)
+(* Monday, December 18, 2023 *)
+
+(* Part 2 *)
+(* used emacs lisp to convert the input to Mathematica points *)
+
+part2 = Polygon[{{0,0},{0,-493239},... {0,0}}]
+
+Area[part2] + (Perimeter[part2] / 2) + 1

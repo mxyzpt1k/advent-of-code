@@ -31,10 +31,10 @@
   (let ((cols (length (aref grid 0)))
 	(rows (length grid)))
     (let ((new (make-vector (+ 2 rows) ())))
-      (setf (aref new 0) (make-vector (+ 2 cols) ?#))
-      (setf (aref new (1+ rows)) (make-vector (+ 2 cols) ?#))
+      (setf (aref new 0) (make-vector (+ 2 cols) char))
+      (setf (aref new (1+ rows)) (make-vector (+ 2 cols) char))
       (dotimes (r rows)
-	(setf (aref new (1+ r)) (vconcat [?#] (aref grid r) [?#])))
+	(setf (aref new (1+ r)) (vconcat (vector char) (aref grid r) (vector char))))
       new)))
 
 (defun aoc-match-groups (n line)

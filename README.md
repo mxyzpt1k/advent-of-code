@@ -9,6 +9,13 @@ The plan is to use [elisp](https://www.gnu.org/software/emacs/manual/elisp.html)
 for the whole contest, but if I see a quick
 solution using sed or awk, I may make a run for the leaderboard.
 
+## Day 18: Lavaduct Lagoon
+
+Drew out the map and used a flood fill for part 1.
+Slept on part 2, implemented rotations for the path, then started
+eliminating the "bumps" before realizing Mathematica makes
+this problem trivial.
+
 ## Day 16: The Floor Will Be Lava
 
 Tracing beams of light through a hall of mirrors.
