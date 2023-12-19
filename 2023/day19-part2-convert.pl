@@ -4,7 +4,7 @@
 use strict;
 use warnings;
 
-print "(setf day19-total 0)\n";
+# print "(setf day19-total 0)\n";
 
 while (<>) {
   print "\n;; $_";

@@ -1,8 +1,6 @@
 ;;; code generated from the test input to be evaluated by #'trace19-eval
 ;;; part of Advent of Code 2023, Day 19
 
-(setf day19-total 0)
-
 ;; px{a<2006:qkq,m>2090:A,rfg}
 (define-rule 'px (quote (if (< a 2006)  (apply qkq) (if (> m 2090)  (accept) (apply rfg)))))
 
@@ -35,5 +33,3 @@
 
 ;; hdj{m>838:A,pv}
 (define-rule 'hdj (quote (if (> m 838)  (accept) (apply pv))))
-
-;; 
