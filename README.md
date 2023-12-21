@@ -9,6 +9,10 @@ The plan is to use [elisp](https://www.gnu.org/software/emacs/manual/elisp.html)
 for the whole contest, but if I see a quick
 solution using sed or awk, I may make a run for the leaderboard.
 
+## Day 20: Pulse Propagation
+
+Solved part 1 with Ruby. Part 2 still TBD.
+
 ## Day 19: Day 19: Aplenty
 
 Nice problem for a lispy language. For part 1, I converted the input

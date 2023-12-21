@@ -123,16 +123,6 @@ class Unspecified < Module
       end
     end
   end
-
-  def upstream_count
-    sum = 0
-    $upstream[@name].each do |up|
-      unless up == @name        # not sure if this happens
-        sum += $machine[up].upstream_count
-      end
-    end
-    sum
-  end
 end
 
 ff = 0
