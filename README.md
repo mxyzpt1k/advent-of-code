@@ -9,20 +9,25 @@ The plan is to use [elisp](https://www.gnu.org/software/emacs/manual/elisp.html)
 for the whole contest, but if I see a quick
 solution using sed or awk, I may make a run for the leaderboard.
 
+## Day 21: Step Counter
+
+Another grid problem. Another one-off solution.
+There's a lot of refactoring in my future.
+
 ## Day 20: Pulse Propagation
 
-Solved part 1 with Ruby. Part 2 still TBD.
+Solved part one with Ruby. Part two still TBD.
 
 ## Day 19: Day 19: Aplenty
 
-Nice problem for a lispy language. For part 1, I converted the input
-to S-expressions (using Perl) and evaluated the results. For part 2, I wrote a
+Nice problem for a lispy language. For part one, I converted the input
+to S-expressions (using Perl) and evaluated the results. For part two, I wrote a
 little interpreter that tracked valid values as it interpreted the rules.
 
 ## Day 18: Lavaduct Lagoon
 
-Drew out the map and used a flood fill for part 1.
-Slept on part 2, implemented rotations for the path, then started
+Drew out the map and used a flood fill for part one.
+Slept on part two, implemented rotations for the path, then started
 eliminating the "bumps" before realizing Mathematica makes
 this problem trivial.
 
