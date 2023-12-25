@@ -9,6 +9,23 @@ The plan is to use [elisp](https://www.gnu.org/software/emacs/manual/elisp.html)
 for the whole contest, but if I see a quick
 solution using sed or awk, I may make a run for the leaderboard.
 
+## Day 25: Snowverload
+
+A graph problem, so I used graphviz to find the solution.
+No part 2 because I don't have enough stars.
+
+## Day 24: Never Tell Me The Odds
+
+Finding interesecting lines of flight. Only part 1.
+
+## Day 23: A Long Walk
+
+Company arrived for the holiday. Haven't gotten to this one yet.
+
+## Day 22: Sand Slabs
+
+Sort of tetris-y, you had to disintegrate falling blocks. Only part 1.
+
 ## Day 21: Step Counter
 
 Another grid problem. Another one-off solution.
@@ -30,6 +47,10 @@ Drew out the map and used a flood fill for part one.
 Slept on part two, implemented rotations for the path, then started
 eliminating the "bumps" before realizing Mathematica makes
 this problem trivial.
+
+## Day 17: Clumsy Crucible
+
+It's got me feeling clumsy. No working solution yet.
 
 ## Day 16: The Floor Will Be Lava
 
