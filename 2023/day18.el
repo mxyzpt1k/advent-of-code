@@ -2,6 +2,10 @@
 ;;; Advent of Code 2023
 ;;; Monday, December 18, 2023
 
+;;;       --------Part 1--------   --------Part 2--------
+;;; Day       Time   Rank  Score       Time   Rank  Score
+;;;  18   01:16:41   4047      0   19:04:58  14661      0
+
 (defun day18-part-1 (buffer-name)
   (let ((max-lisp-eval-depth 5000)
 	(plan ())
