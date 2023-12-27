@@ -9,7 +9,6 @@
 ;;; Day       Time   Rank  Score       Time   Rank  Score
 ;;;  25   01:28:13   1967      0          -      -      -
 
-
 (defun day25-read-input (buffer-name)
   (let ((graph ()))
     (dolist (line (aoc-buffer-lines buffer-name) (seq-uniq graph))
