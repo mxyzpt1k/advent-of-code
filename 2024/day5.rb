@@ -1,7 +1,9 @@
 # Advent of Code
 # Thursday, December 05, 2024
 
-# not 4509
+#       --------Part 1--------   --------Part 2--------
+# Day       Time   Rank  Score       Time   Rank  Score
+#   5   00:34:02   7186      0   01:01:20   7112      0
 
 $rules = {}
 
@@ -32,7 +34,7 @@ def elf_sort(list, start)
           x = list[j]
           list[j,1] = []
           list[i,0] = x
-          return elf_sort(list, i)
+          return elf_sort(list,i)
         end
       end
     end
@@ -58,7 +60,7 @@ $stdin.each_line do |line|
   if check(list)
     sum += middle(list)
   else
-    x = elf_sort list, 0
+    x = elf_sort(list, 0)
     sum2 += middle(x)
   end
 end
