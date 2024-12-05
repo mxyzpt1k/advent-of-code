@@ -2,8 +2,8 @@
 #    Day       Time   Rank  Score       Time   Rank  Score
 #       4   01:03:10  10952      0   01:26:58  10381      0
 
-#f = open("/Users/marti/Downloads/day4.test.input.txt")
-f = open("/Users/marti/Downloads/day4.2024.input.txt")
+#f = open("day4.test.input.txt")
+f = open("day4.2024.input.txt")
 dat = readlines(f)
 close(f)
 A = stack(dat);
