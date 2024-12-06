@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# Advent of Code 2025
+# Advent of Code
 # Sunday, December 01, 2024
 
 #      -------Part 1--------   -------Part 2--------
