@@ -4,6 +4,8 @@
 ;;; This relies on modifying the input data with sed
 ;;; sed 's/://; s/^/(/; s/$/)/' ~/Downloads/day7.2024.input.txt > input.7
 
+;;; part 2 takes about one second in petite chez scheme
+
 (define (possible? ops target value nums)
   (cond ((< target value) #f)
 	((null? nums) (= target value))
@@ -29,4 +31,5 @@
 	  ((part nums) (loop (read) (+ sum (car nums))))
 	  (else (loop (read) sum)))))
 
-;;(with-input-from-file "input.7" (lambda () (solve day7-part2)))
+;;(time (with-input-from-file "input.7" (lambda () (solve day7-part2))))
+
