@@ -1,6 +1,10 @@
 # Advent of Code
 # Sunday, December 08, 2024
 
+#       --------Part 1--------   --------Part 2--------
+# Day       Time   Rank  Score       Time   Rank  Score
+#   8   01:07:42   7821      0   01:34:23   7906      0
+
 $map = []
 $stdin.each_line do |line|
   $map << line.chomp.chars
