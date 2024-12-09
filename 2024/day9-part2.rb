@@ -7,12 +7,15 @@
 #   9   02:09:52  11507      0   10:21:50  20775      0
 
 class ElfFile
+
   attr_accessor :pos, :size
+
   def initialize(id, pos, size)
     @id = id
     @pos = pos
     @size = size
   end
+
   def checksum
     sum = 0
     @size.times { |i| sum += (@pos+i) * @id }
