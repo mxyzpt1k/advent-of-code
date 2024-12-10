@@ -1,6 +1,9 @@
 ;;; aoc.scm - utilities to help with advent of code
 ;;; started on Sunday, December 08, 2024
 
+(define (aoc-char-value c)
+  (- (char->integer c) (char->integer #\0)))
+
 (define (aoc-read-line-vector)
   (let loop ((acc '()))
     (let ((c (peek-char)))
@@ -21,6 +24,13 @@
 
 (define (aoc-grid-size grid)
   (cons (vector-length grid) (vector-length (vector-ref grid 0))))
+
+(define (aoc-grid-rows grid)
+  (vector-length grid))
+
+(define (aoc-grid-cols grid)
+  (vector-length (vector-ref grid 0)))
+
 
 (define (aoc-make-grid rows cols char)
   (let ((grid (make-vector rows)))
