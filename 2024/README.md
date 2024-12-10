@@ -5,7 +5,7 @@
 I struggled to get a Scheme version to work in part one, then went to
 bed tired and a little frustrated after a couple false starts for part
 two.  In the morning, I turned to Ruby instead, and banged out a solution
-fairly quickly.
+fairly quickly. It's easier to read too.
 
 ## Tuesday, December 10
 
