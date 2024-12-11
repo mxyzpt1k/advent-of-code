@@ -22,7 +22,7 @@
   (let ((seen (make-integer-table))
 	(count 0))
     (define (altitude r c) (aoc-grid-ref grid r c))
-    (define (make-key r c) (+ c (* r (aoc-grid-rows grid))))
+    (define (make-key r c) (+ c (* r (aoc-grid-rows grid)))) ;!? should have been (* r colums)
     (define (seen? r c) (table-ref seen (make-key r c)))
     (define (helper r c)
       (cond ((seen? r c) 0)

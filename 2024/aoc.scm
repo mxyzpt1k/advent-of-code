@@ -2,6 +2,7 @@
 ;;; started on Sunday, December 08, 2024
 
 (define (aoc-char-value c)
+  ;; not a good name for the function, but there it is
   (- (char->integer c) (char->integer #\0)))
 
 (define (aoc-read-line-vector)
@@ -31,7 +32,6 @@
 (define (aoc-grid-cols grid)
   (vector-length (vector-ref grid 0)))
 
-
 (define (aoc-make-grid rows cols char)
   (let ((grid (make-vector rows)))
     (aoc-do-times rows
@@ -59,7 +59,7 @@
 ;; a flip is north/south mirror
 (define aoc-flip-grid aoc-reverse-vector)
 
-;; a mirrot is an east/west flip
+;; a mirror is an east/west flip
 (define (aoc-mirror-grid grid)
   (let ((new (aoc-copy-grid grid)))
     (aoc-do-times (car (aoc-grid-size grid))
@@ -75,11 +75,35 @@
 	  (aoc-grid-set! new c r (aoc-grid-ref grid r c))))
       new)))
 
-(define (aoc-rotate-grid-left grid)
-  (aoc-flip-grid (aoc-tranpose-grid grid)))
+(define (aoc-compose f g) (lambda args (f (apply g args))))
 
-(define (aoc-rotate-grid-right grid)
-  (aoc-mirror-grid (aoc-tranpose-grid grid)))
+(define aoc-rotate-grid-left (aoc-compose aoc-tranpose-grid aoc-mirror-grid))
+
+(define aoc-rotate-grid-right (aoc-compose aoc-mirror-grid aoc-tranpose-grid))
+
+(define aoc-rotate-grid-180 (aoc-compose aoc-mirror-grid aoc-flip-grid))
+
+(define (aoc-partial f x) (lambda (y) (f x y)))
+
+(define (aoc-reduce f lst acc)
+  (if (null? lst)
+      acc
+      (aoc-reduce f (cdr lst) (f acc (car lst)))))
+
+(define (aoc-filter pred? lst)
+  (let ((f (lambda (acc x) (if (pred? x) (cons x acc) acc))))
+    (reverse (aoc-reduce f lst '()))))
+;;(aoc-filter even? (aoc-range 1 10))
+
+(define (aoc-fold-left f acc) 
+  (lambda (lst)
+    (aoc-reduce f lst acc)))
+
+(define (aoc-range first size)
+  (let loop ((k first) (len size) (acc '()))
+    (if (zero? len)
+	(reverse acc)
+	(loop (+ 1 k) (+ -1 len) (cons k acc)))))
 
 (define (aoc-grid-ref grid row col)
   (let ((v (vector-ref grid row)))
@@ -104,19 +128,21 @@
 	(if (pred? (aoc-grid-ref g r c))
 	    (set! acc (cons (cons r c) acc)))))
     acc))
- 
-(define (aoc-do-times n fun)
-  (let loop ((k 0))
-    (cond ((= k n) #t)
-	  (else (fun k)
-		(loop (+ 1 k))))))
 
-(define (aoc-print-grid grid)
-  (aoc-walk-grid grid
-    (lambda (g r c)
-      (if (zero? c) (newline))
-      (display (aoc-grid-ref g r c))))
-  (newline))
+(define (aoc-do-times n fun)
+  (let ((v #f))
+    (do ((k 0 (+ 1 k)))
+	((= k n) v)
+      (set! v (fun k)))))
+
+(define (aoc-print-grid grid . width)
+  (let ((space (if (null? width) 0 (car width))))
+    (aoc-walk-grid grid
+      (lambda (g r c)
+	(if (zero? c) (newline))
+	(display (aoc-grid-ref g r c))
+	(display space)))
+    (newline)))
 
 (define (aoc-tests)
   
