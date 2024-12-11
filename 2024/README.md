@@ -4,6 +4,9 @@
 
 RLE FTW
 
+Not really Run Length Encoding, but compressing each line
+by combining duplicate pebbles and tracking counts.
+
 ## Tuesday, December 10
 
 Another night of Scheme. I switched from Chez to Scheme48 because
