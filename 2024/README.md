@@ -2,16 +2,14 @@
 
 ## Wednesday, December 11
 
-RLE FTW
-
-Not really Run Length Encoding, but compressing each line
-by combining duplicate pebbles and tracking counts.
+Sovled part 1 with a brute force approach, but part 2 required
+a litte more thought. I ended up combining duplicate keys
+and tracking counts along with the numbers.
 
 ## Tuesday, December 10
 
 Another night of Scheme. I switched from Chez to Scheme48 because
-while Chez is very fast, I have a hard time getting good info from the
-debugger.
+while Chez is very fast, I'm not as familiar with it.
 
 Oddly enough, a bug in my part one code turned out to be the solution
 for part two. I noticed when the ratings described for the larger
@@ -22,5 +20,5 @@ example in part two matched some of debuging output.
 I struggled to get a Scheme version to work in part one, then went to
 bed tired and a little frustrated after a couple false starts for part
 two.  In the morning, I turned to Ruby instead, and banged out a solution
-fairly quickly. It's easier to read too.
+fairly quickly.
 
