@@ -1,5 +1,12 @@
 # Advent of Code 2024
 
+## Friday, December 13
+
+Solved part 1 in Perl, but Math::BigRat gave me issues in part 2.
+The same code (basically) in SBCL (common lisp) worked right off.
+There's still a little Perl to convert the input to something easy
+for SBCL to read.
+
 ## Wednesday, December 11
 
 Sovled part 1 with a brute force approach, but part 2 required
