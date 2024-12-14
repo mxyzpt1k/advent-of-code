@@ -97,6 +97,7 @@ end
 grid = Grid.new($height, $width)
 step_size = 1
 best = -1
+candidates = 0
 (101*103).times do
   $bots.each { |b| grid.erase b }
   $bots.each do |bot|
@@ -107,7 +108,8 @@ best = -1
   m = grid.metric
   if m > best
     grid.draw
-    puts m
+    candidates += 1
+    puts candidates
     best = m
   end
 end
