@@ -1,5 +1,12 @@
 # Advent of Code 2024
 
+## Saturday, December 14
+
+After yesterday, I expected another scaling problem and went with a
+math-y solution for part 1.  That took longer than I care to admit to
+get right, and then I had to write code to step through each iteration
+anyway for part 2.
+
 ## Friday, December 13
 
 Solved part 1 in Perl, but Math::BigRat gave me issues in part 2.

@@ -1,10 +1,11 @@
 ;;; Saturday, December 07, 2024
 ;;; Advent of Code
 
-;;; This relies on modifying the input data with sed
-;;; sed 's/://; s/^/(/; s/$/)/' ~/Downloads/day7.2024.input.txt > input.7
+;;; Modify the input data to make it easier to read.
+;;; sed 's/://; s/^/(/; s/$/)/' ~/Downloads/day7.2024.input.txt
+;;; "190: 10 19" => "(190 10 19)"
 
-;;; part 2 takes about one second in petite chez scheme
+;;; part 2 takes just under a second in petite chez scheme on an M1 mac
 
 (define (possible? ops target value nums)
   (cond ((< target value) #f)
