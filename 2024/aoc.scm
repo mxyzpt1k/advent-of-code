@@ -121,6 +121,17 @@
 	  (lambda (col)
 	    (fun grid row col)))))))
 
+(define (aoc-walk-slice grid from to fun)
+  (let ((start-row (car from))
+	(start-col (cdr from))
+	(end-row (car to))
+	(end-col (cdr to)))
+    (aoc-do-times (+ 1 (- end-row start-row))
+      (lambda (row)
+	(aoc-do-times (+ 1 (- end-col start-col))
+	  (lambda (col)
+	    (fun grid (+ row start-row) (+ col start-col))))))))
+
 (define (aoc-grid-find grid pred?)
   (let ((acc '()))
     (aoc-walk-grid grid
@@ -136,7 +147,7 @@
       (set! v (fun k)))))
 
 (define (aoc-print-grid grid . width)
-  (let ((space (if (null? width) 0 (car width))))
+  (let ((space (if (null? width) "" (car width))))
     (aoc-walk-grid grid
       (lambda (g r c)
 	(if (zero? c) (newline))

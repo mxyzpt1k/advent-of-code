@@ -129,7 +129,7 @@ class Grid
 
   def run(prog)
     prog.each_with_index do |c,i|
-      write_image
+      #write_image
       @pc += 1
       if @grid[@y][@x] != '@'
         puts "unexpected piece at y=#{@y}, x=#{@x} :: #{@grid[@y][@x]}"
@@ -184,5 +184,5 @@ open(ARGV[0]) do |fh|
     end
   end
   puts grid.score
-  grid.write_image
+  #grid.write_image
 end
