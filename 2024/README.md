@@ -1,5 +1,13 @@
 # Advent of Code 2024
 
+## Monday, December 16
+
+Back to scheme again.
+
+## Sunday, December 15
+
+Created an animation of the part 2 problem.
+
 ## Saturday, December 14
 
 After yesterday, I expected another scaling problem and went with a
