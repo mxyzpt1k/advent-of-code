@@ -55,7 +55,6 @@
 (define (part1 grid)
   (let ((start-row 0)
 	(start-col 0)
-	(seen (aoc-copy-grid grid)))
     (aoc-walk-grid grid
       (lambda (g r c)
 	(aoc-grid-set! seen r c '())

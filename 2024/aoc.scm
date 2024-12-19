@@ -146,11 +146,12 @@
 	((= k n) v)
       (set! v (fun k)))))
 
-(define (aoc-print-grid grid . width)
-  (let ((space (if (null? width) "" (car width))))
+(define (aoc-print-grid grid . space)
+  (let ((space (if (null? space) "" (car space))))
     (aoc-walk-grid grid
       (lambda (g r c)
-	(if (zero? c) (newline))
+	(if (zero? c)
+	    (newline))
 	(display (aoc-grid-ref g r c))
 	(display space)))
     (newline)))
@@ -166,7 +167,7 @@
       (aoc-walk-grid g (counter #\T))
       count))
 
-  (aoc-grid-find (aoc-read-grid "test.8.2") (lambda (c) (char=? c #\T)))
+  (aoc-grid-find (aoc-read-grid "test.12") (lambda (c) (char=? c #\J)))
 
   (aoc-copy-grid (aoc-read-grid "test.8.2"))
   
