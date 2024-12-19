@@ -2,7 +2,9 @@
 # Advent of Code
 # Thursday, December 19, 2024
 
-# not 1998458231011913
+#       --------Part 1--------   --------Part 2--------
+# Day       Time   Rank  Score       Time   Rank  Score
+#  19   00:11:29   1527      0   02:39:24   6678      0
 
 use strict;
 use warnings;
