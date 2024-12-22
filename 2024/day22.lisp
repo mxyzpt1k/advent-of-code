@@ -3,7 +3,7 @@
 
 ;;       --------Part 1--------   --------Part 2--------
 ;; Day       Time   Rank  Score       Time   Rank  Score
-;;  22   00:48:29   4273      0          -      -      -
+;;  22   00:48:29   4273      0   12:54:33  12709      0
 
 (defun prune (n)
   (mod n 16777216))
@@ -27,6 +27,8 @@
 
 ;;(day22-part1 "input.22")
 
+;; part 2...
+
 (defun gen-diffs (seed times)
   (let ((diffs ())
 	(nums ())
@@ -38,20 +40,6 @@
       (push (- (mod n 10) prev) diffs)
       (setq prev (mod n 10)))))
 ;; (gen-diffs 123 10)
-
-(defun day22-part2 (file)
-  (with-open-file (in file)
-    (do ((n #1=(read in nil nil) #1#)
-	 (diffs ()))
-	((null n) (reverse diffs))
-      (push (gen-diffs n 2000) diffs))))
-
-(defun day22-dump (file data)
-  (with-open-file (s file :direction :output :if-exists :overwrite)
-    (dolist (diff data)
-      (dolist (d diff)
-	(format s "~D" d))
-      (terpri s))))
 
 (defun first-four (list)
   (if (null (fourth list))
@@ -74,12 +62,17 @@
       (maphash #'(lambda (k v) (setq high (max high v))) ht)
       high)))
 
-(progn
-  (setq data (day22-part2 "input.22"))
-  (day22-search data))
+(defun day22-part2 (file)
+  (with-open-file (in file)
+    (do ((n #1=(read in nil nil) #1#)
+	 (diffs ()))
+	((null n) (reverse diffs))
+      (push (gen-diffs n 2000) diffs))))
 
-(gen-diffs 123 10)
-(length data)
-(length (car data))
+(defun day22-part2-solve (file)
+  (let ((data (day22-part2 file)))
+    (day22-search data)))
 
+;; (time (day22-part2-solve "input.22"))
+;; => 2.463861 seconds of total run time (2.246789 user, 0.217072 system)
 
