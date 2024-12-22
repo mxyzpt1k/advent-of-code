@@ -109,6 +109,11 @@
   (let ((v (vector-ref grid row)))
     (vector-ref v col)))
 
+(define (aoc-grid-fetch grid row col default)
+  (cond ((or (< row 0) (<= (aoc-grid-rows grid) row)) default)
+	((or (< col 0) (<= (aoc-grid-cols grid) col)) default)
+	(else (aoc-grid-ref grid row col))))
+
 (define (aoc-grid-set! grid row col val)
   (let ((v (vector-ref grid row)))
     (vector-set! v col val)))
@@ -122,10 +127,10 @@
 	    (fun grid row col)))))))
 
 (define (aoc-walk-slice grid from to fun)
-  (let ((start-row (car from))
-	(start-col (cdr from))
-	(end-row (car to))
-	(end-col (cdr to)))
+  (let ((start-row (max 0 (car from)))
+	(start-col (max 0 (cdr from)))
+	(end-row (min (car to) (+ -1 (aoc-grid-rows grid))))
+	(end-col (min (cdr to) (+ -1 (aoc-grid-cols grid)))))
     (aoc-do-times (+ 1 (- end-row start-row))
       (lambda (row)
 	(aoc-do-times (+ 1 (- end-col start-col))
