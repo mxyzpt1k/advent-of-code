@@ -1,3 +1,12 @@
+#!/usr/bin/perl
+# Advent of Code 2024
+# Monday, December 23, 2024
+
+# this is (most of) part 1, pipe the output to: sort -u | wc
+
+#       --------Part 1--------   --------Part 2--------
+# Day       Time   Rank  Score       Time   Rank  Score
+#  23   00:16:41   1846      0   02:34:42   4870      0
 
 use strict;
 use warnings;

@@ -2,6 +2,9 @@
 # Advent of Cdoe 2024
 # Monday, December 23, 2024
 
+# this is part 2, part 1 is day23.pl
+# switched to Ruby for sets
+
 #      --------Part 1--------   --------Part 2--------
 # Day       Time   Rank  Score       Time   Rank  Score
 #  23   00:16:41   1846      0   02:34:42   4870      0
