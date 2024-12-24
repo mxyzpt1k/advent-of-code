@@ -1,6 +1,8 @@
 ;;; Advent of Code 2024
 ;;; Sunday, December 22, 2024
 
+;; day 12, part 2
+
 (defvar data)				;2x2 array
 
 (defun walk-grid (fun data)
@@ -19,7 +21,7 @@
   (let ((queue (list (list row col)))
 	(this (aref data row col))
 	(seen (make-hash-table :test 'equal)))
-    (setf (gethash (list row col) seen) t)
+    (setf (gethash (list row col) seen) t) ; <-- !! for blocks of one block
     (flet ((test-push (r c)
 	     (when (eql this (grid-ref data r c))
 	       (let ((point (list r c)))
