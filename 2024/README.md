@@ -1,5 +1,12 @@
 # Advent of Code 2024
 
+## Tuesday, December 24, 2024
+
+Finished day 24, part 1 in pretty good time. Leaving part 2 for later.
+
+Finally found the bug in day 12 code that made it skip regions of one
+block to finish part 2.
+
 ## Monday, December 16
 
 Back to scheme again.
