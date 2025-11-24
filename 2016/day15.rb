@@ -13,9 +13,7 @@ class Series15
   end
 
   def incr_to(n)
-    while n > value
-      @x += 1
-    end
+    @x = (1.0 * (y - @b) / @a).ceil
   end
 end
 
