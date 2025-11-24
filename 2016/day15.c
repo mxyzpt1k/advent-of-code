@@ -39,7 +39,7 @@ int main (int argc, char **argv) {
       int x = ss[i].x;
       incr(&ss[i], max);
       if (x != ss[i].x)
-	updates ++;
+		updates ++;
       max = max  > curval(&ss[i]) ? max : curval(&ss[i]);
     }
     if (! updates)
