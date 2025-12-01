@@ -1,4 +1,4 @@
-# Sunday, November 30, 2025
+# Monday, December 01, 2025
 # Advent of Code 2025
 
 use strict;
