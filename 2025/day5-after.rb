@@ -5,11 +5,10 @@
 # monkey patching the Range class for this
 class Range
   def overlap?(other)
-    self.first.between?(other.first, other.last) or
-      other.first.between?(self.first, self.last)
+    other.cover?(first) or other.cover?(last)
   end
-  def concat(other)
-    [self.first, other.first].min .. [self.last, other.last].max
+  def merge(other)
+    [first, other.first].min .. [last, other.last].max
   end
 end
 
@@ -45,7 +44,7 @@ def reduce (ranges, sum)
     remove = []
     ranges.each_with_index do |r2, i|
       if r1.overlap? r2
-        r1 = r1.concat r2
+        r1 = r1.merge r2
         remove << i
       end
     end
