@@ -29,36 +29,29 @@ puts $fresh
 # part 2
 
 def overlap? (r1, r2)
-  if r1.first.between? r2.first, r2.last
-    true
-  elsif r2.first.between? r1.first, r1.last
-    true
-  else
-    false
-  end
+  r1.first.between?(r2.first, r2.last) or
+    r2.first.between?(r1.first, r1.last)
 end
 
 def reduce (ranges, sum)
-  loop do
-    ranges.length.times do
-      r1 = ranges.shift
-      remove = []
-      ranges.each_with_index do |r2, i|
-        if overlap? r1, r2
-          r1 = [r1.first, r2.first].min .. [r1.last, r2.last].max
-          remove << i
-        end
+  ranges.length.times do
+    r1 = ranges.shift
+    remove = []
+    ranges.each_with_index do |r2, i|
+      if overlap? r1, r2
+        r1 = [r1.first, r2.first].min .. [r1.last, r2.last].max
+        remove << i
       end
-      remove.sort.reverse.map {|i| ranges.delete_at i}
-      ranges << r1
-      puts ranges.length
     end
-    newsum = ranges.map(&:size).sum
-    if newsum != sum
-      sum = newsum
-    else
-      return newsum
-    end
+    remove.sort.reverse.map {|i| ranges.delete_at i}
+    ranges << r1
+    #puts ranges.length
+  end
+  newsum = ranges.map(&:size).sum
+  if newsum != sum
+    reduce ranges, newsum
+  else
+    newsum
   end
 end
 
