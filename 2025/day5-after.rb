@@ -2,16 +2,6 @@
 # Friday, December 05, 2025
 # Advent of Code 2025
 
-# monkey patching the Range class for this
-class Range
-  def overlap?(other)
-    other.cover?(first) or other.cover?(last)
-  end
-  def merge(other)
-    [first, other.first].min .. [last, other.last].max
-  end
-end
-
 $ranges = []
 
 $stdin.each_line do |line|
@@ -38,6 +28,16 @@ puts $fresh
 
 # part 2
 
+# monkey patching the Range class for part 2
+class Range
+  def overlap?(other)
+    other.cover?(first) or other.cover?(last)
+  end
+  def merge(other)
+    [first, other.first].min .. [last, other.last].max
+  end
+end
+
 def reduce (ranges, sum)
   ranges.length.times do
     r1 = ranges.shift
@@ -48,7 +48,7 @@ def reduce (ranges, sum)
         remove << i
       end
     end
-    remove.sort.reverse.map {|i| ranges.delete_at i}
+    remove.reverse.map {|i| ranges.delete_at i}
     ranges << r1
     #puts ranges.length
   end
@@ -60,6 +60,5 @@ def reduce (ranges, sum)
   end
 end
 
-sum = reduce $ranges, $ranges.map(&:size).sum
-puts sum
+puts reduce($ranges, $ranges.map(&:size).sum)
 # not 428637687860195
