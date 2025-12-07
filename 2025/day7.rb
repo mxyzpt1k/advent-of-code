@@ -2,8 +2,8 @@
 # Sunday, December 07, 2025
 # Advent of Code 2025
 
-splits = 0                      # part 1
-beams = {}                      # part 2
+splits = 0
+beams = {}
 
 $stdin.each_line do |line|
   row = line.chomp.split ''
@@ -12,8 +12,8 @@ $stdin.each_line do |line|
       beams[pos] = 1
     elsif c == '^'
       if beams[pos]
-        splits += 1
-        beams[pos+1] = beams.fetch(pos+1, 0) + beams[pos]
+        splits += 1     # part 1
+        beams[pos+1] = beams.fetch(pos+1, 0) + beams[pos]   # part 2
         beams[pos-1] = beams.fetch(pos-1, 0) + beams[pos]
         beams.delete pos
       end
