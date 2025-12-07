@@ -7,7 +7,7 @@
 
 #include <stdio.h>
 
-// lines are 142 chars long; the first and last characters are always '.'
+// lines are 142 chars long; the first and last characters are never '^'
 #define ROW_SIZE 200
 
 int main (int argc, char **argv) {
