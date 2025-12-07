@@ -6,7 +6,6 @@
  */
 
 #include <stdio.h>
-#include <string.h>
 
 // lines are 142 chars long; the first and last characters are always '.'
 #define ROW_SIZE 200
